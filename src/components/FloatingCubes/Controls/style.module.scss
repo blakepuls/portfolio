@@ -1,0 +1,67 @@
+@import "../../../styles/theme";
+
+.container {
+  // width: 500px;
+  background: rgba(darken($background, 2.5%), 0.95);
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  border-radius: 10px;
+  border-radius: 50%;
+  // backdrop-filter: blur(5px);
+  // -webkit-backdrop-filter: blur(5px);
+  overflow: hidden;
+
+  animation: pulse 2s infinite;
+  transition: all 450ms ease-in-out;
+
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(darken($background, 2.5%), 0.95);
+    // box-shadow: rgba($accent, 0.19) 0px 10px 20px, rgba($accent, 0.23) 0px 6px 6px;
+  }
+}
+
+.header {
+  display: flex;
+  // justify-content: space-between;
+  // background-color: red;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+.menu {
+  position: fixed;
+  margin-top: 7.5em;
+  transition: all 350ms ease-in-out;
+  width: 350px;
+  padding: 1em;
+  transform: translateX(-50%);
+  left: 50%;
+  border-radius: 10px;
+  background: rgba(darken($background, 5%), 0.9);
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@keyframes pulse {
+  0% {
+    // border: 3px solid $accent;
+    box-shadow: 0 0 0 0 rgba($accent, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($accent, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($accent, 0);
+  }
+}

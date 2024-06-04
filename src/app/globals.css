@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.animate-grow {
+  @apply scale-0;
+  animation: grow 0.2s ease-out forwards;
+}
+
+.animate-shrink {
+  animation: shrink 0.2s ease-out forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.markdown a {
+  @apply text-primary-500;
+}
+
+/* .markdown code {
+  @apply bg-bg-950 rounded-md px-1;
+} */
+
+.markdown a:hover {
+  @apply text-primary-600;
+}
+
+.markdown h1 {
+  @apply text-3xl font-bold my-4;
+}
+
+.markdown h2 {
+  @apply text-2xl font-semibold my-3;
+}
+
+.markdown h3 {
+  @apply text-xl font-medium my-2;
+}
+
+.markdown img {
+  @apply rounded-md;
+}
+
+.markdown p {
+  @apply text-base my-1 text-gray-400;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply list-disc pl-5 text-gray-400;
+}
+
+.markdown li {
+  @apply my-1 text-gray-400;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r shadow-primary-sm from-primary-900 rounded-md to-primary-500 text-white py-2 px-4 flex items-center gap-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 hover:translate-y-0.5 transition hover:shadow-primary-sm;
+    @apply active:translate-y-1 active:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r shadow-md from-bg-800 rounded-md to-bg-700 text-white py-2 px-4 flex items-center gap-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 hover:translate-y-0.5 transition hover:shadow-sm;
+    @apply active:translate-y-1 active:shadow-none;
+  }
+
+  .shadow-primary {
+    box-shadow: 0 20px 30px -5px rgba(84, 61, 255, 0.5),
+      0 10px 10px -5px rgba(84, 61, 255, 0.1);
+  }
+
+  .shadow-primary-md {
+    box-shadow: 0 17.5px 17.5px -5px rgba(84, 61, 255, 0.5),
+      0 5px 5px -5px rgba(84, 61, 255, 0.1);
+  }
+
+  .shadow-primary-sm {
+    box-shadow: 0 15px 20px -5px rgba(84, 61, 255, 0.5),
+      0 5px 5px -5px rgba(84, 61, 255, 0.1);
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #621aa1;
+  border-radius: 10px;
+  /* border: 3px solid #ffffff; */
+}
